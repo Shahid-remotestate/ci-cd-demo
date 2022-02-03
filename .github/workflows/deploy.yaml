@@ -44,5 +44,4 @@ jobs:
         env:
           CI: ""
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          FIREBASE_PROJECT: demo
 
