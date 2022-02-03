@@ -6,7 +6,7 @@ name: Firebase Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: 
+    branches:
       - main
       - stage
       - dev
@@ -42,5 +42,4 @@ jobs:
       - name: Build and deploy
         run: npm run ${{ env.CMD }}
         env:
-          CI: ""
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
