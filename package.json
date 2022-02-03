@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
+    "build-prod": "npm run build --configuration=production && http-server dist/demo",
+    "build-dev": "ng build --configuration dev && http-server dist/demo",
+    "build-stage": "ng build --configuration stage && http-server dist/demo",
     "deploy-prod": "npm run build --configuration=production && firebase deploy --only hosting:prod-mydemo",
     "deploy-dev": "ng build --configuration dev && firebase deploy --only hosting:dev-mydemo",
     "deploy-stage": "ng build --configuration stage && firebase deploy --only hosting:stage-mydemo",
