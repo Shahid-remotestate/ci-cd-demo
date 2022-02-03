@@ -40,6 +40,5 @@ jobs:
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
       - name: Build and deploy
-        run: npm run ${{ env.CMD }}
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: ng build --configuration dev && firebase deploy --only hosting:dev-mydemo --token ${{ secrets.FIREBASE_TOKEN }}
+      
